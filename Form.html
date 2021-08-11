@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>REGISTRATION FORM</title>
+
+    <style>
+        body {
+            background-image: url("img3.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        form {
+            width: 100%;
+            background: lightblue;
+        }
+    </style>
+
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+   
+    <div class="container">
+        
+        <div class="row">
+            
+            <div class="col-lg-6"></div>
+            <div class="col-lg-6">
+                <div id="uo">
+                    <form class="form-group">
+                        <div class="row">
+                            
+                             <h1 style="text-align: center;">  Registration Form</h1>
+                             <form action="python.py" method="post">
+                            <div class="col-lg-6">
+                                <label>First Name:</label>
+                                <input type="text" name="Firstname" class="form-control"placeholder= " Enter your first name"><br>
+                                 
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Last Name:</label>
+                                <input type="text" name="Lastname" class="form-control"placeholder=" Enter your last name"><br>
+                            </div>
+                        </div>
+                        <label>E-mail</label>
+                        <form action="https://formsubmit.co/your@email.com" method="POST">
+                    
+                        <input type="email" name="Email" class ="form-control"placeholder=" Enter your E-mail"><br>
+                        <div class="row">
+                            
+                            
+                            <div class="col-lg-5">
+                                <label>Phone Number:</label>
+                                <input type="text" name="Number" class="form-control"placeholder= " Enter your Phone Number"><br>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            
+                            
+                            <div class="col-lg-6">
+                                <label>Password:</label>
+                                <input type="Password" name="Pass" class="form-control"placeholder= " Enter your New Password"><br>
+                            </div>
+                            <div class="col-lg-7">
+                                <label>Re-type Password:</label>
+                                <input type="Password" name="Repass" class="form-control"placeholder="  Re-type Password"><br>
+                            </div>
+                        </div>
+
+                        <select class="form-control">
+                            <option>Choose Gender..</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Others</option>
+                        </select><br><br>
+                        
+                        <input type="Submit" name="Submit" value="Submit" class="btn btn-primary btn-block btn-lg">
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
