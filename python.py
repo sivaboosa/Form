@@ -1,4 +1,4 @@
-#!C:/Program Files/Python39
+#!C:/Program Files/Python39/python
 print("Content-Type:text/html")
 print()
 
@@ -7,23 +7,23 @@ import cgi
 print("<h1> Registratio Form</h1>")
 print("<hr/")
 print("<h1> Using input tag</h1>")
-print("<body bgcolo='red'>")
+print("<body bgcolor='red'>")
 
 form = cgi.FieldStorage()
 
 Firstname = form.getvalue("Firstname")
 Lastname = form.getvalue("Lastname")
-Phonenumber = form.getvalue("Number")
 Email = form.getvalue("Email")
+Phonenumber = form.getvalue("Number")
+Password = form.getvalue("Password")
 Gender = form.getvalue("Gender")
-Password = form.getvalue("Pass")
 
 import mysql.connector
 
-con = mysql.connector.connect(user="", password="", host="127.0.0.1", database="data")
+con = mysql.connector.connect(user="sid", password="Userpassword", host="localhost", database="test")
 cur = con.cursor()
 
-cur.execute("insert user values(%s,%s,%s,%s,%s,%s)",(Firstname,Lastname,Phonenumber,Email,Gender,Password))
+cur.execute("insert user values(%s,%s,%s,%s,%s,%s)",(Firstname,Lastname,Email,Phonenumber,Password,Gender))
 con.commit()
 
 cur.close()
