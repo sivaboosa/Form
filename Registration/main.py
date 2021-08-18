@@ -24,7 +24,7 @@ def hello():
         return redirect('/registration')
     return render_template('form.html')
  
-@app.route('/users')
+@app.route('/registration')
 def users():
     cur = mysql.connection.cursor()
     resultValue = cur.execute("SELECT * FROM users")
