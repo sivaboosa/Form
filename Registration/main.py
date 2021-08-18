@@ -28,7 +28,7 @@ def hello():
 @app.route('/success')
 def users():
     cur = mysql.connection.cursor()
-    resultValue = cur.execute("SELECT * FROM users")
+    resultValue = cur.execute("SELECT * FROM registration")
     if resultValue > 0:
         userdetails = cur.fetchall()
         return render_template('success.html', userdetails = userdetails)
