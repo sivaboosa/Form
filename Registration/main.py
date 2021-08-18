@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request, redirect
 from flask_mysqldb import MySQL
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder = "template")
+
 
 mysql = MySQL(app)
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/form', methods=['GET','POST'])
 
 def hello():
     if request.method == 'POST':
