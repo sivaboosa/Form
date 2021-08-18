@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 mysql = MySQL(app)
 
-@app.route('/form', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 
 def hello():
     if request.method == 'POST':
@@ -21,7 +21,7 @@ def hello():
         cur.execute("INSERT INTO users(name, email) VALUES(%s, %s, %s, %d, %s, %s)",(Firstname, Lastname, Email, Phonenumber, Password, Gender))
         mysql.connection.commit()
         cur.close()
-        return redirect('/registration')
+        return redirect('/success')
     return render_template('form.html')
  
 @app.route('/registration')
