@@ -6,8 +6,7 @@ app = Flask(__name__, template_folder = "template")
 
 mysql = MySQL(app)
 
-@app.route('/')
-@app.route('/form', methods = ['GET', 'POST'])
+@app.route("/form", methods = ['GET', 'POST'])
 
 def hello():
     if request.method == 'POST':
@@ -26,7 +25,7 @@ def hello():
         return redirect('/success')
     return render_template('form.html')
  
-@app.route('/registration')
+@app.route('/success')
 def users():
     cur = mysql.connection.cursor()
     resultValue = cur.execute("SELECT * FROM users")
