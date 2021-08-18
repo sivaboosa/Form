@@ -19,7 +19,7 @@ def hello():
         Password = userdetails['Pass']
         Gender = userdetails['Gender']
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO registration(Firstname, Lastname, Email, Phonenumber, Password, Gender) VALUES(%s, %s, %s, %d, %s, %s)",('Firstname', 'Lastname', 'Email', 'Phonenumber', 'Password', 'Gender'))
+        cur.execute("INSERT INTO registration(Firstname, Lastname, Email, Phonenumber, Password, Gender) VALUES(%s, %s, %s, %d, %s, %s)",(Firstname, Lastname, Email, Phonenumber, Password, Gender))
         mysql.connection.commit()
         cur.close()
         return redirect('/success')
