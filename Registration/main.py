@@ -10,21 +10,21 @@ mysql = MySQL(app)
 def hello():
     if request.method == 'POST':
         #Fetch form data
-        userDetails = request.form
-        Firstname = userDetails.getvalue("Firstname")
-        Lastname = userDetails.getvalue("Lastname")
-        Email = userDetails.getvalue("Email")
-        Phonenumber = userDetails.getvalue("Number")
-        Password = userDetails.getvalue("Pass")
-        Gender = userDetails.getvalue("Gender")
+        userdetails = request.form
+        Firstname = userdetails['Firstname']
+        Lastname = userdetails['Lastname']
+        Email = userdetails['Email']   
+        Phonenumber = userdetails['Number']
+        Password = userdetails['Pass']
+        Gender = userdetails['gender']
         cur = mysql.connection.cursor()
         cur.execute("INSERT INTO users(name, email) VALUES(%s, %s, %s, %d, %s, %s)",(Firstname, Lastname, Email, Phonenumber, Password, Gender))
         mysql.connection.commit()
         cur.close()
-        return redirect('/success')
+        return redirect('/registration')
     return render_template('form.html')
  
-@app.route('/registration')
+@app.route('/success')
 def users():
     cur = mysql.connection.cursor()
     resultValue = cur.execute("SELECT * FROM users")
