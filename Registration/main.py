@@ -6,9 +6,9 @@ app = Flask(__name__, template_folder = "template")
 
 mysql = MySQL(app)
 
-@app.route("/form", methods = ['GET', 'POST'])
+@app.route("/form.html", methods = ['GET', 'POST'])
 
-def hello():
+def Registration():
     if request.method == 'POST':
         #Fetch form data
         userdetails = request.form
@@ -23,7 +23,7 @@ def hello():
         mysql.connection.commit()
         cur.close()
         return redirect('/success')
-    return render_template('form.html')
+    return render_template('template/form.html')
  
 @app.route('/success')
 def users():
@@ -31,7 +31,7 @@ def users():
     resultValue = cur.execute("SELECT * FROM registration")
     if resultValue > 0:
         userdetails = cur.fetchall()
-        return render_template('success.html', userdetails = userdetails)
+        return render_template('template/success.html', userdetails = userdetails)
 
 if __name__ == '__main__':
     app.run(debug=True, host='localhost')
