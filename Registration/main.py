@@ -7,12 +7,12 @@ app = Flask(__name__, template_folder = "template")
 
 mysql = MySQL(app)
 
-@app.route("/", methods = ['POST'])
+@app.route("/", methods = ['GET','POST'])
 
 def registration():
     if request.method == 'POST':
         #Fetch form data
-        userdetails = request.form
+        userdetails = request.form.values
         Firstname = userdetails["Firstname"]
         Lastname = userdetails['Lastname']
         Email = userdetails['Email']   
